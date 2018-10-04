@@ -21,10 +21,10 @@ def function(test_str):
                         if log[i-j] < count-j:
                             log[i+j] = log[i-j]
     #print(log)
-    r_str = new_str[log.index(max(log))-max(log):log.index(max(log))+max(log)+1]
-    #print(r_str)
-    r_str = r_str.replace('$','')
-    #print(r_str)
+    max_len = max(log)
+    index_max_len = [x for x in log if x == max_len]
+    r_str = [new_str[x-max_len:x+max_len+1] for x in index_max_len]
+    
     return(r_str)
     
 if __name__ == '__main__':
